@@ -1,0 +1,31 @@
+{
+  "name": "promise",
+  "version": "1.0.0",
+  "description": "a repository to learn to polyfill promise",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc --watch",
+    "test1": "node dist/test.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuhaodes/promise.git"
+  },
+  "keywords": [
+    "promise",
+    "learn",
+    "polyfill"
+  ],
+  "author": "wuhaodes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wuhaodes/promise/issues"
+  },
+  "homepage": "https://github.com/wuhaodes/promise#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "promises-aplus-tests": "^2.1.2",
+    "typescript": "^4.2.3"
+  }
+}
