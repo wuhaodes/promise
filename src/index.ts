@@ -1,43 +1,44 @@
-enum STATUS {
-  PENDING,
-  FULFILLED,
-  REJECTED
-}
-
-interface VoidFn<T = any> {
-  (res: T): void
-}
+const PENDING = "PENDING"
+const RESOLVED = "resolved"
+const REJECTED = "REJECTED"
 
 export default class Promise {
-  private status = STATUS.PENDING
-  private onFulfilledCallBack = [] as any[]
-  private onRejectedCallBack = [] as any[]
+  private status = PENDING
+  private callbacks = [] as ((res: any) => any)[]
+  private data = undefined as any
+  constructor(executor: (reslove: (value: any) => any, reject?: (reason: any) => any) => any) {
+    function resolve(value: any) {
 
-  constructor (exec: (
-    resolve: (res: any) => void, reject?: (err: any) => void) => void) {
-
-    const resolve = (res: any) => {
-      this.status = STATUS.FULFILLED
-      console.log(this)
-      this.onFulfilledCallBack.forEach(cb => {
-        console.log('ccc')
-      })
     }
 
-    const reject = (err: any) => {
-      this.status = STATUS.REJECTED
-      this.onRejectedCallBack.forEach(cb => cb(err))
+    function reject(reason: any) {
     }
-    exec(resolve, reject)
+
+    executor(resolve, reject)
   }
 
-  then (onFulfilled?: (res: any) => void, onRejected?: (err: any) => void) {
-    console.log('d',onFulfilled)
-    onFulfilled && this.onFulfilledCallBack.push(onFulfilled)
-    onRejected && this.onRejectedCallBack.push(onFulfilled)
-  }
+  then(onResolved?: (value: any) => any, onRejected?: (reason: any) => any) {
 
-  catch (f: (error: any) => void) {
+  }
+  catch(onRejected: (reason: any) => any) {
+
+  }
+  static resolve(value: any) {
+
+  }
+  static resolveDelay(value: any) {
+
+  }
+  static reject(reason: any) {
+
+  }
+  static rejectDelay(reason: any) {
+
+  }
+  static all(promises: any[]) {
+
+  }
+  static race(promises: any[]) {
 
   }
 }
