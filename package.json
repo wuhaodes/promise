@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsc --watch",
-    "test1": "node dist/test.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node dist/test/index.js"
   },
   "repository": {
     "type": "git",
