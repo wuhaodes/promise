@@ -1,2 +1,2 @@
 # promise
-Learn to polyfill promise
+polyfill promise
