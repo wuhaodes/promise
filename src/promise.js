@@ -181,7 +181,7 @@
      */
     Promise.all = function (promises) {
         const promisesLen = promises.length
-        const values = new Array(promisesLen)
+        const values = []
         let resolvedCount = 0
         return new Promise((resolve, reject) => {
             promises.forEach((promise, index) => {
